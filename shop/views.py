@@ -50,4 +50,4 @@ class ProductView(ListView):
 
 class Redirect(RedirectView):
     query_string = True
-    url = 'https://goo.su/yfNkna'
+    url = 'https://github.com/9ZonDG6/gjango-project'
