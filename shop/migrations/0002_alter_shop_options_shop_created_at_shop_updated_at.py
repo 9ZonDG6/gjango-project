@@ -12,18 +12,22 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='shop',
-            options={'ordering': ['created_at'], 'verbose_name': 'Товар', 'verbose_name_plural': 'Товары'},
+            options={'ordering': ['created_at'],
+                     'verbose_name': 'Товар',
+                     'verbose_name_plural': 'Товары'},
         ),
         migrations.AddField(
             model_name='shop',
             name='created_at',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now,
+            field=models.DateTimeField(auto_now_add=True,
+                                       default=django.utils.timezone.now,
                                        verbose_name='Дата публикации'),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='shop',
             name='updated_at',
-            field=models.DateTimeField(auto_now=True, verbose_name='Дата обновление'),
+            field=models.DateTimeField(auto_now=True,
+                                       verbose_name='Дата обновление'),
         ),
     ]

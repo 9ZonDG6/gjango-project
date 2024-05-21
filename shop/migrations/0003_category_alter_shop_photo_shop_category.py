@@ -13,8 +13,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(db_index=True, max_length=150, verbose_name='Наименование категории')),
+                ('id', models.BigAutoField(auto_created=True,
+                                           primary_key=True,
+                                           serialize=False,
+                                           verbose_name='ID')),
+                ('title', models.CharField(db_index=True,
+                                           max_length=150,
+                                           verbose_name='Наименование '
+                                                        'категории')),
             ],
             options={
                 'verbose_name': 'Категория',
@@ -25,12 +31,17 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='shop',
             name='photo',
-            field=models.ImageField(blank=True, null=True, upload_to='photos/%Y/%m/%d/', verbose_name='Фото'),
+            field=models.ImageField(blank=True,
+                                    null=True,
+                                    upload_to='photos/%Y/%m/%d/',
+                                    verbose_name='Фото'),
         ),
         migrations.AddField(
             model_name='shop',
             name='category',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='shop.category',
+            field=models.ForeignKey(null=True,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    to='shop.category',
                                     verbose_name='Категория'),
         ),
     ]

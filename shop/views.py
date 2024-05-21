@@ -20,12 +20,14 @@ class CategoryView(ListView):
     template_name = 'shop/category.html'
 
     def get_queryset(self):
-        return Product.objects.filter(category__slug=self.kwargs['category_slug'])
+        return Product.objects.filter(
+            category__slug=self.kwargs['category_slug'])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
-        selected_category = Category.objects.get(slug=self.kwargs['category_slug'])
+        selected_category = Category.objects.get(
+            slug=self.kwargs['category_slug'])
         context['selected_category'] = selected_category
         context['title'] = selected_category.title
         return context
