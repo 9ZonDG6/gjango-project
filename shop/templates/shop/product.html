@@ -4,9 +4,9 @@
 <div class="row mt-5">
     <div class="col-md-3 text-center">
         {% if product.photo %}
-            <img src="{{ product.photo.url }}" width="374" class="mt-1" alt="{{ product.title }}">
+        <img src="{{ product.photo.url }}" width="374" class="mt-1" alt="{{ product.title }}">
         {% else %}
-            <img src="https://fakeimg.pl/374x374/?text=Нет%20Фото&font=bebas" alt="{{ product.title }}">
+        <img src="https://fakeimg.pl/374x374/?text=Нет%20Фото&font=bebas" alt="{{ product.title }}">
         {% endif %}
     </div>
     <div class="col-md-9">

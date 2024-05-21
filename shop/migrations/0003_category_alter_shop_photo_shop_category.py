@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('shop', '0002_alter_shop_options_shop_created_at_shop_updated_at'),
     ]
@@ -31,6 +30,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='shop',
             name='category',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='shop.category', verbose_name='Категория'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='shop.category',
+                                    verbose_name='Категория'),
         ),
     ]

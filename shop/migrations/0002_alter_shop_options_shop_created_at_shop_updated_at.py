@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('shop', '0001_initial'),
     ]
@@ -18,7 +17,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='shop',
             name='created_at',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now, verbose_name='Дата публикации'),
+            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now,
+                                       verbose_name='Дата публикации'),
             preserve_default=False,
         ),
         migrations.AddField(
