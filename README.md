@@ -1,1 +1,0 @@
-# gjango-project
