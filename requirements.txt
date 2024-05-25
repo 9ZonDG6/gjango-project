@@ -1,3 +1,6 @@
 django
 pillow
 flake8
+django-bootstrap-v5
+djangorestframework
+django-filter
