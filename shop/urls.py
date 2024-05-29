@@ -16,4 +16,3 @@ urlpatterns = [
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('accounts/register/', views.RegisterView.as_view(), name='register'),
 ] + router.urls
-
