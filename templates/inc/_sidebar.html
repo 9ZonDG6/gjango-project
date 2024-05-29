@@ -1,7 +1,0 @@
-<h3 class="mb-3 text-center">Категории</h3>
-<ul class="list-group mb-3">
-    {% for category in categories %}
-    <a href="{{ category.get_absolute_url }}"
-       class="list-group-item {% if category == selected_category %}active{% endif %}">{{ category.title }}</a>
-    {% endfor %}
-</ul>

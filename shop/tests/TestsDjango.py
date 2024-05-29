@@ -2,7 +2,6 @@ from django.test import TestCase, Client
 from shop import models
 
 
-# Create your tests here.
 class Tests(TestCase):
     def setUp(self):
         self.client = Client()

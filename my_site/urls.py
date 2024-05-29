@@ -9,5 +9,6 @@ urlpatterns = [
     path('', include('shop.urls')),
 ]
 
+# URL для медиа в режиме разработки.
 if settings.DEBUG:
     urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)

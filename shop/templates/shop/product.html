@@ -1,18 +1,33 @@
 {% extends 'base.html' %}
 
+{% block sidebar %}
+<h3 class="mb-3 text-center">Категории</h3>
+<ul class="list-group mb-3">
+    {% for category in categories %}
+    <a href="{{ category.get_absolute_url }}"
+       class="list-group-item {% if category == selected_category %}active{% endif %}">{{ category.title }}</a>
+    {% endfor %}
+</ul>
+{% endblock sidebar %}
+
 {% block content %}
 <div class="row mt-5">
     <div class="col-xl-4 col-lg-6 col-md-12 text-center">
         {% if product.photo %}
         <img src="{{ product.photo.url }}" width="450" class="mt-1" alt="{{ product.title }}">
         {% else %}
-        <img src="https://fakeimg.pl/450x450/?text=Нет%20Фото&font=bebas" alt="{{ product.title }}">
+        <img src="https://fakeimg.pl/500x500/?text=No%20Photo&font=bebas" alt="{{ product.title }}">
         {% endif %}
     </div>
     <div class="col-xl-8 col-lg-6 col-md-12">
         <div class="text-right mb-3">
             <h3>{{ title }}</h3>
             <p>{{ product.info }}</p>
+            {% if product.in_stock %}
+                <h6>В наличии</h6>
+            {% else %}
+                <h6>Не наличии</h6>
+            {% endif %}
             <h5>{{ product.price }} руб.</h5>
         </div>
     </div>

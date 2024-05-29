@@ -1,11 +1,14 @@
-from django.views.generic import ListView, RedirectView
-
+from django.views.generic import ListView, RedirectView, CreateView
+from django.urls import reverse_lazy
 from shop import filters
 from .models import Product, Category
+from .serializers import ProductSerializer
+from .forms import RegisterForm
+from rest_framework.viewsets import ModelViewSet
 
 
 class IndexView(ListView):
-    paginate_by = 16
+    paginate_by = 16  # Устанавливает количество продуктов на страницу - пагинация
     model = Product
     context_object_name = 'products'
     template_name = 'shop/index.html'
@@ -60,6 +63,18 @@ class ProductView(ListView):
         context['product'] = product
         context['selected_category'] = product.category
         return context
+
+
+class RegisterView(CreateView):
+    form_class = RegisterForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/register.html'
+
+
+class ProductViewSet(ModelViewSet):
+    queryset = Product.objects.all()
+    filterset_class = filters.Product
+    serializer_class = ProductSerializer
 
 
 class Redirect(RedirectView):
